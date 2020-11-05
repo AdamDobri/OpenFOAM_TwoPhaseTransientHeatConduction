@@ -15,6 +15,7 @@ are shared online.
 
 
 %%%%%%%%%%%%%% General Overview %%%%%%%%%%%%%
+
 "MeshExampleWithGMSH.geo" is used to generate the mesh with the open source
 meshing program "gmsh". This mesh is imported into OpenFOAM version 5 (blueCFD)
 and the transient thermal response is simulated using the "chtMultiRegionFOAM" solver.

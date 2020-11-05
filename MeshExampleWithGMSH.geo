@@ -13,10 +13,10 @@
 //    3) perform extursion, as OpenFOAM requires a 3D mesh
 //    4) Define the physical volumes and surfaces. This program makes use of the
 //       order in which gmsh names surfaces. Other methods exist.
-//    5) Export .msh file "version 2 ascii" and uncheck the save all elements 
+//    5) Export .msh file "version 2 ascii" and uncheck the save all elements (done manually after reviewing the mesh in gmsh)
 
 // This work was carried out with support from Grant Award Number 090118FD5313 
-// under the ìStructure-Property Correlations in Multi-Scale Compositesî 
+// under the ‚ÄúStructure-Property Correlations in Multi-Scale Composites‚Äù 
 // project at Nazarbayev University. In the context of this project, these codes
 // are shared online.
 

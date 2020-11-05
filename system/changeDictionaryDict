@@ -1,0 +1,70 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      changeDictionaryDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+boundary
+{
+    fibresRear
+    {
+        type            empty;
+    }
+    matrixRear
+    {
+        type            empty;
+     }
+    fibresFront
+    {
+        type            empty;
+    }
+    matrixFront
+    {
+        type            empty;
+
+    }
+    matrixTop
+    {
+        type            cyclicAMI;
+        neighbourPatch  matrixBottom;
+        transform       translational;
+        separationVector (0 -100e-6 0);
+        matchTolerance  0.0001;
+    }
+    matrixBottom
+    {
+        type            cyclicAMI;
+        neighbourPatch  matrixTop;
+        transform       translational;
+        separationVector (0 100e-6 0);
+        matchTolerance  0.0001;
+    }
+    fibresTop
+    {
+        type            cyclicAMI;
+        neighbourPatch  fibresBottom;
+        transform       translational;
+        separationVector (0 -100e-6 0);
+        matchTolerance  0.0001;
+    }
+    fibresBottom
+    {
+        type            cyclicAMI;
+        neighbourPatch  fibresTop;
+        transform       translational;
+        separationVector (0 100e-6 0);
+        matchTolerance  0.0001;
+    }
+}
+
+// ************************************************************************* //

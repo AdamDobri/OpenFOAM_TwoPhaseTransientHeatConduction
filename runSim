@@ -1,0 +1,7 @@
+gmshToFoam *.msh > OutputGMSHing
+changeDictionary > OutputChangeDict
+splitMeshRegions -cellZonesOnly -overwrite > OutputSplitMeshRegions
+checkMesh > OutputCheckMesh
+decomposePar -allRegions > OutputDecomposePar
+mpirun -np 4 chtMultiRegionFoam.exe -parallel > OutputLogFile
+reconstructPar -allRegions > OutputReconstructPar

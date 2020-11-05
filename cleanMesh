@@ -1,0 +1,11 @@
+rm -r constant/fibres/polyMesh/
+rm -r constant/matrix/polyMesh/
+rm -r constant/polyMesh/
+rm -r constant/cellToRegion
+rm -r logs
+rm -r postProcessing
+rm -r processor*
+rm Output*
+rm 0/cellToRegion
+rm 0/fibres/cellToRegion
+rm 0/matrix/cellToRegion
